@@ -1,33 +1,45 @@
-<!DOCTYPE HTML>  
-<html>  
-    <header>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="table_style.css">
-        <title>My Webpage Title</title>
-    </header>
-    <body>  
-        <!---Navigation--->
-        <!--This section of code defines the navigation bar at the top of the page.  The classes used here are defined in the style.css file.-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <!--This code defines the "My Webpage" link in the top right corner of the navigation pane-->
-                <a class="navbar-brand" href="">My Webpage</a>
-                <!--This code defines the "List" link in the top left corner of the navigation pane-->
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./list.html">List</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!--This code creates the middle section of the webpage-->
-        <header class="masthead bg-primary text-white text-center">
-            <h1>My Movies</h1>
-        </header>
-        <!--Here is where the table will be loaded in.  The actual table will be loaded in JavaScript.-->
-        <section class="mt-5 text-center">
-            <div id="showDataJSON"></div>
-        </section>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="table_style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carl's Info 202 Website</title>
+  
+</head>
+<body>
+    <div class="topnav">
+        <a  href="index.html">Home</a>
+        <a class="active" href="list.html">List</a>
+      </div> 
+    <div class="container">
+        <div class="header">
+            THE 
+            LIST
+        </div>
 
+        <div class="content">
+            <div class="text-block">
+                <section class="mt-5 text-center">
+                    <div id="showDataJSON"></div>
+                </section>
+            </div>
+            <div class="image-block">
+                <img src="table_alien.png" alt="Carl is Great">
+            </div>
+        </div>
+
+      
+
+        <div class="footer">
+            <p>School of Information</p>
+            <p>© _CARL_ : SEPT.2024 </p>
+        </div>
+    </div>
+</body>
+
+<!-- CODE FOR <TABLE> -->
     <script>
 
         /*
@@ -38,7 +50,7 @@
         * Add data to table
         * Add table to DOM
         */
-        fetch('./list_data.json')
+        fetch('list_data.json')
             .then(response => response.json())
             .then(data => {
 
@@ -81,4 +93,5 @@
                 divContainer.appendChild(jsonTable);
             });
     </script>  
+
 </html>
